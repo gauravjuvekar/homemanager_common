@@ -17,12 +17,13 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."gaurav" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules =
-          [
-            ./home.nix
-          ];
-      };
+      homeConfigurations."gaurav@dt.sc.gjuvekar.com" =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules =
+            [
+              ./home.nix
+            ];
+        };
     };
 }
