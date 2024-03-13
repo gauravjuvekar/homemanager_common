@@ -1,0 +1,48 @@
+{
+  "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1710329147,
+        "narHash": "sha256-ExKfXL6PURo5VJ9bNPkOxCNBlRDoPILeCfUrMyJ20i0=",
+        "ref": "refs/heads/master",
+        "rev": "1b74e3679e90fe7ad142bb5f66610a0d92ac0165",
+        "revCount": 3393,
+        "type": "git",
+        "url": "https://github.com/nix-community/home-manager"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/nix-community/home-manager"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1710272261,
+        "narHash": "sha256-g0bDwXFmTE7uGDOs9HcJsfLFhH7fOsASbAuOzDC+fhQ=",
+        "ref": "nixos-unstable",
+        "rev": "0ad13a6833440b8e238947e47bea7f11071dc2b2",
+        "revCount": 596105,
+        "type": "git",
+        "url": "https://github.com/nixos/nixpkgs"
+      },
+      "original": {
+        "ref": "nixos-unstable",
+        "type": "git",
+        "url": "https://github.com/nixos/nixpkgs"
+      }
+    },
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
