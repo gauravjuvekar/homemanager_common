@@ -4,9 +4,15 @@
     [
       ../../common/base.nix
       ../../common/dev_heavy.nix
+      ../../common/fonts.nix
       ../../common/graphical.nix
-      ../../common/hw_heavy.nix
+      ../../common/graphical_admin.nix
+      ../../common/graphical_apps.nix
+      ../../common/graphical_design_heavy.nix
+      ../../common/graphical_dev.nix
+      ../../common/graphical_yubikey.nix
       ../../common/interactive.nix
+      ../../common/interactive_yubikey.nix
       ../../common/user_gjuvekar-com.nix
     ];
 
