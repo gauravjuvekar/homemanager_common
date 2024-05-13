@@ -1,12 +1,12 @@
 {
-  description = "Home Manager configuration of gaurav";
+  description = "Common home-manager configuration for multiple hosts";
 
   inputs =
     {
-      nixpkgs.url = "git+https://github.com/nixos/nixpkgs?ref=nixos-unstable";
+      nixpkgs.url = "github:NixOS/nixpkgs";
       home-manager =
         {
-          url = "git+https://github.com/nix-community/home-manager";
+          url = "github:nix-community/home-manager";
           inputs.nixpkgs.follows = "nixpkgs";
         };
     };
@@ -22,7 +22,7 @@
           inherit pkgs;
           modules =
             [
-              ./home.nix
+              ./hosts/gaurav-dt/home.nix
             ];
         };
     };

@@ -2,13 +2,13 @@
 {
   imports =
     [
-      ./alacritty/alacritty.nix
+      ../../common/base.nix
+      ../../common/dev_heavy.nix
+      ../../common/graphical.nix
+      ../../common/hw_heavy.nix
+      ../../common/interactive.nix
+      ../../common/user_gjuvekar-com.nix
     ];
-  home.username = "gaurav";
-  home.homeDirectory = "/home/gaurav";
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
