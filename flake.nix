@@ -25,5 +25,13 @@
               ./hosts/gaurav-dt/home.nix
             ];
         };
+      homeConfigurations."gaurav@gaurav-nixlt" =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules =
+            [
+              ./hosts/gaurav-nixlt/home.nix
+            ];
+        };
     };
 }

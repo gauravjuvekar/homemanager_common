@@ -2,6 +2,6 @@
 {
   imports =
     [
-      ./alacritty/alacritty.nix
+      ./dev_lite.nix
     ];
 }
