@@ -2,9 +2,7 @@
 {
   home.packages = with pkgs;
     [
-      graphviz
-      meld
-      plantuml
-      sqlitebrowser
+      cinnamon.xreader
+      pdfarranger
     ];
 }
