@@ -3,6 +3,8 @@
   imports =
     [
       ./alacritty/alacritty.nix
+      ./cinnamon/cinnamon.nix
+      ./nemo/nemo.nix
     ];
 
   home.packages = with pkgs;
