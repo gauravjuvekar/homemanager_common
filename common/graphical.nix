@@ -4,6 +4,7 @@
     [
       ./alacritty/alacritty.nix
       ./cinnamon/cinnamon.nix
+      ./graphical_xdg.nix
       ./nemo/nemo.nix
     ];
 

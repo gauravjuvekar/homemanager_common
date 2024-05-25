@@ -7,6 +7,10 @@
           "clock-format" = "24h";
           "clock-show-seconds" = true;
         };
+      "org/cinnamon/desktop/applications" =
+        {
+          "terminal/exec" = "alacritty";
+        };
       "org/cinnamon/desktop/interface" =
         {
           "clock-show-seconds" = true;
