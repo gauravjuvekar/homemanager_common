@@ -18,7 +18,6 @@
       git-filter-repo
       git-repo
       glab
-      nodePackages.nodejs
       patchutils
       sqlite
       ydiff

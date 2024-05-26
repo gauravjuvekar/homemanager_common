@@ -6,9 +6,11 @@
       neovim
       nixd
       nodePackages.bash-language-server
+      nodePackages.nodejs
       nodePackages.vim-language-server
       nodePackages.vscode-json-languageserver
       perlnavigator
+      python311Packages.pynvim
       tree-sitter
     ];
 
