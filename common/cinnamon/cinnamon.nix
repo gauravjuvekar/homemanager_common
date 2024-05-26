@@ -60,7 +60,8 @@
         {
           "media-handling/automount-open" = false;
           "media-handling/autorun-never" = true;
-          "screensaver/default-message" = "Gaurav Juvekar (gjuvekar)";
+          "screensaver/default-message" =
+            config.fullname + " (" + config.home.username + ") " + config.fqdn;
           "screensaver/lock-enabled" = true;
           "screensaver/time-format" = "%H:%M:%S";
           "screensaver/use-custom-format" = true;
