@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs;
     [
@@ -7,4 +7,9 @@
       rustc
       rustfmt
     ];
+
+  xdg.configFile."rustfmt/rustfmt".text =
+    ''
+      max_width: 80
+    '';
 }
