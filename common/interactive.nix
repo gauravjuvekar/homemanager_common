@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
+{  pkgs, ... }:
 {
+  imports =
+    [
+      ./gpg/gpg.nix
+    ];
   home.packages = with pkgs;
     [
       (hiPrio parallel) # Because moreutils overwrites it
