@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   imports =
     [
@@ -15,6 +15,7 @@
       ../../common/graphical_yubikey.nix
       ../../common/interactive.nix
       ../../common/interactive_docs.nix
+      ../../common/interactive_gjuvekar-com.nix
       ../../common/interactive_yubikey.nix
       ../../common/user_gjuvekar-com.nix
     ];
