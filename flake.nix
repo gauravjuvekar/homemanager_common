@@ -6,7 +6,7 @@
       nixpkgs.url = "github:NixOS/nixpkgs";
       home-manager =
         {
-          url = "github:nix-community/home-manager";
+          url = "github:gauravjuvekar/home-manager/fqdn";
           inputs.nixpkgs.follows = "nixpkgs";
         };
     };
