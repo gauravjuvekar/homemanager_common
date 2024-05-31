@@ -11,7 +11,7 @@
       "d" = "git diff";
       "da" = "git diff --cached";
       "dm" = "d $(gmb)";
-      "dy" = "ydiff -s -w0 --wrap --";
+      "dy" = "ydiff -H change -H whole-line -s -w0 --wrap --";
       "fetch" = "git fetch";
       "g" = "git";
       "gmb" = "git merge-base master HEAD";
