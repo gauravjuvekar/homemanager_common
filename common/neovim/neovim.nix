@@ -10,6 +10,7 @@
       nodePackages.vim-language-server
       nodePackages.vscode-json-languageserver
       perlnavigator
+      pyright
       tree-sitter
     ];
 
