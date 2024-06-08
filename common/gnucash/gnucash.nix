@@ -12,6 +12,7 @@
         {
           "general/auto-decimal-point" = true;
           "general/date-format" = 3; # ISO
+          "general/show-account-color-tabs" = false;
         };
     };
 }
