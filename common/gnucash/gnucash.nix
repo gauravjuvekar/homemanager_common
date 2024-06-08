@@ -5,4 +5,13 @@
       bindfs
       gnucash
     ];
+
+  dconf.settings =
+    {
+      "org/gnucash/GnuCash" =
+        {
+          "general/auto-decimal-point" = true;
+          "general/date-format" = 3; # ISO
+        };
+    };
 }
