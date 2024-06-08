@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   imports =
     [
+      ./pass/pass.nix
       ./syncthing/syncthing.nix
     ];
 }
