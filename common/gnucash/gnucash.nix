@@ -10,7 +10,7 @@
     {
       "org/gnucash/GnuCash" =
         {
-          "general/auto-decimal-point" = true;
+          "general/auto-decimal-point" = false;
           "general/date-format" = 3; # ISO
           "general/show-account-color-tabs" = false;
         };
