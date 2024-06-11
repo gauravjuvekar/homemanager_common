@@ -32,6 +32,7 @@
       step-cli
       tmux
       unzip
+      watchexec
       yq
     ];
 }

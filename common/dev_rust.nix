@@ -3,6 +3,7 @@
   home.packages = with pkgs;
     [
       cargo
+      cargo-watch
       rust-analyzer
       rustc
       rustfmt
