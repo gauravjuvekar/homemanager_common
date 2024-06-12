@@ -3,7 +3,14 @@
   home.packages = with pkgs;
     [
       cargo
+      cargo-audit
+      cargo-depgraph
+      cargo-lock
+      cargo-play
+      cargo-sort
+      cargo-vet
       cargo-watch
+      clippy
       rust-analyzer
       rustc
       rustfmt
