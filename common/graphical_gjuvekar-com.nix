@@ -7,6 +7,7 @@
     ];
   home.packages = with pkgs;
     [
+      audacity
       calibre
       clementine
       kid3-qt
