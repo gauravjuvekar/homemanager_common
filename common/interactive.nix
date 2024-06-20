@@ -3,6 +3,7 @@
   imports =
     [
       ./gpg/gpg.nix
+      ./parallel/parallel.nix
     ];
   home.packages = with pkgs;
     [
