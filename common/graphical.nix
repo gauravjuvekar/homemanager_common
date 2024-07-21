@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports =
     [
       ./alacritty/alacritty.nix
       ./cinnamon/cinnamon.nix
       ./graphical_xdg.nix
+      ./hyprland/hyprland.nix
       ./nemo/nemo.nix
     ];
 
