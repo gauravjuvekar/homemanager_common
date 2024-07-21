@@ -16,10 +16,10 @@
       bless
       blueberry
       flameshot
-      gnome.dconf-editor
-      gnome.gnome-font-viewer
-      gnome.gnome-system-monitor
-      gnome.seahorse
+      dconf-editor
+      gnome-font-viewer
+      gnome-system-monitor
+      seahorse
       screenkey
       shutter
       wmctrl
