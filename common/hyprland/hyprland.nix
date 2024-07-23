@@ -6,26 +6,35 @@
       settings =
         {
           "$mod" = "SUPER";
+          "$modS" = "SUPER_SHIFT";
           "$fileManager" = "${pkgs.cinnamon.nemo}/bin/nemo";
           "$logout" = "${pkgs.wlogout}/bin/wlogout";
           "$menu" =  "${pkgs.fuzzel}/bin/fuzzel";
           "$terminal" = "${pkgs.alacritty}/bin/alacritty";
           bind =
             [
-              "$mod, C, exec, killactive"
-              "$mod, F, exec, $fileManager"
-              "$mod, M, exec, $logout"
-              "$mod, R, exec, $menu"
-              "$mod, T, exec, $terminal"
-              "$mod, left,  movefocus, l"
-              "$mod, down,  movefocus, d"
-              "$mod, up,    movefocus, u"
-              "$mod, right, movefocus, r"
-              "$mod, H,     movefocus, l"
-              "$mod, J,     movefocus, d"
-              "$mod, K,     movefocus, u"
-              "$mod, L,     movefocus, r"
-              "$mod, SPACE, togglefloating"
+              "$mod,  C,     exec,       killactive"
+              "$mod,  F,     exec,       $fileManager"
+              "$mod,  M,     exec,       $logout"
+              "$mod,  R,     exec,       $menu"
+              "$mod,  T,     exec,       $terminal"
+              "$mod,  left,  movefocus,  l"
+              "$mod,  down,  movefocus,  d"
+              "$mod,  up,    movefocus,  u"
+              "$mod,  right, movefocus,  r"
+              "$mod,  H,     movefocus,  l"
+              "$mod,  J,     movefocus,  d"
+              "$mod,  K,     movefocus,  u"
+              "$mod,  L,     movefocus,  r"
+              "$modS, left,  movewindow, l"
+              "$modS, down,  movewindow, d"
+              "$modS, up,    movewindow, u"
+              "$modS, right, movewindow, r"
+              "$modS, H,     movewindow, l"
+              "$modS, J,     movewindow, d"
+              "$modS, K,     movewindow, u"
+              "$modS, L,     movewindow, r"
+              "$mod,  SPACE, togglefloating"
             ];
           bindm =
             [
