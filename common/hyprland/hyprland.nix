@@ -8,7 +8,7 @@
           "$mod" = "SUPER";
           "$fileManager" = "${pkgs.cinnamon.nemo}/bin/nemo";
           "$menu" =  "${pkgs.wofi}/bin/wofi --show drun";
-          "$terminal" = "{pkgs.alacritty}/bin/alacritty";
+          "$terminal" = "${pkgs.alacritty}/bin/alacritty";
           bind =
             [
               "$mod, C, exec, killactive"
