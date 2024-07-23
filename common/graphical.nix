@@ -15,12 +15,12 @@
       baobab
       bless
       blueberry
-      flameshot
       dconf-editor
+      flameshot
       gnome-font-viewer
       gnome-system-monitor
-      seahorse
       screenkey
+      seahorse
       shutter
       wmctrl
       xclip
