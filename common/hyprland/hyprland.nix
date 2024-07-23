@@ -7,13 +7,14 @@
         {
           "$mod" = "SUPER";
           "$fileManager" = "${pkgs.cinnamon.nemo}/bin/nemo";
+          "$logout" = "${pkgs.wlogout}/bin/wlogout";
           "$menu" =  "${pkgs.wofi}/bin/wofi --show drun";
           "$terminal" = "${pkgs.alacritty}/bin/alacritty";
           bind =
             [
               "$mod, C, exec, killactive"
               "$mod, F, exec, $fileManager"
-              "$mod, M, exec, exit"
+              "$mod, M, exec, $logout"
               "$mod, R, exec, $menu"
               "$mod, T, exec, $terminal"
               "$mod, left,  movefocus, l"
