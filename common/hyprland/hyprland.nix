@@ -8,7 +8,7 @@
           "$mod" = "SUPER";
           "$fileManager" = "${pkgs.cinnamon.nemo}/bin/nemo";
           "$logout" = "${pkgs.wlogout}/bin/wlogout";
-          "$menu" =  "${pkgs.wofi}/bin/wofi --show drun";
+          "$menu" =  "${pkgs.fuzzel}/bin/fuzzel";
           "$terminal" = "${pkgs.alacritty}/bin/alacritty";
           bind =
             [
