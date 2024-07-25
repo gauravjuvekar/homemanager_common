@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+  imports =
+    [
+      ../wayland/wayland.nix
+    ];
+
   wayland.windowManager.hyprland =
     {
       enable = true;
