@@ -21,6 +21,7 @@
               "$mod,  C,     killactive"
               "$mod,  F,     exec,       $fileManager"
               "$mod,  M,     exec,       $logout"
+              "$mod,  Q,     killactive"
               "$mod,  R,     exec,       $menu"
               "$mod,  T,     exec,       $terminal"
               "$mod,  left,  movefocus,  l"
