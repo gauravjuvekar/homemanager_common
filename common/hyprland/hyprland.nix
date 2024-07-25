@@ -18,7 +18,7 @@
           "$terminal" = "${pkgs.alacritty}/bin/alacritty";
           bind =
             [
-              "$mod,  C,     exec,       killactive"
+              "$mod,  C,     killactive"
               "$mod,  F,     exec,       $fileManager"
               "$mod,  M,     exec,       $logout"
               "$mod,  R,     exec,       $menu"
