@@ -16,6 +16,8 @@
           "$logout" = "${pkgs.wlogout}/bin/wlogout";
           "$menu" =  "${pkgs.fuzzel}/bin/fuzzel";
           "$terminal" = "${pkgs.alacritty}/bin/alacritty";
+          "$volChangeCmd" = "wpctl set-volume @DEFAULT_AUDIO_SINK@";
+          "$volMuteCmd" = "wpctl set-mute @DEFAULT_AUDIO_SINK@";
           bind =
             [
               "$mod,  C,     killactive"
@@ -25,6 +27,8 @@
               "$mod,  R,     exec,           $menu"
               "$mod,  T,     exec,           $terminal"
               "$mod,  SPACE, togglefloating"
+              ", xf86audioraisevolume, exec, $volMuteCmd 0"
+              ", xf86audiomute,        exec, $volMuteCmd toggle"
             ] ++
             (
               builtins.concatLists (
@@ -46,6 +50,11 @@
                   ]
                 )
             );
+          binde =
+            [
+              ", xf86audioraisevolume, exec, $volChangeCmd 5%+"
+              ", xf86audiolowervolume, exec, $volChangeCmd 5%-"
+            ];
           bindm =
             [
               "$mod, mouse:272, movewindow"
