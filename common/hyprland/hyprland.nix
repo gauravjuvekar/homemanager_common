@@ -27,8 +27,8 @@
               "$mod,  R,     exec,           $menu"
               "$mod,  T,     exec,           $terminal"
               "$mod,  SPACE, togglefloating"
-              ", xf86audioraisevolume, exec, $volMuteCmd 0"
-              ", xf86audiomute,        exec, $volMuteCmd toggle"
+              ", XF86AudioRaiseVolume, exec, $volMuteCmd 0"
+              ", XF86AudioMute,        exec, $volMuteCmd toggle"
             ] ++
             (
               builtins.concatLists (
@@ -52,8 +52,8 @@
             );
           binde =
             [
-              ", xf86audioraisevolume, exec, $volChangeCmd 5%+"
-              ", xf86audiolowervolume, exec, $volChangeCmd 5%-"
+              ", XF86AudioRaiseVolume, exec, $volChangeCmd 5%+"
+              ", xF86AudioLowerVolume, exec, $volChangeCmd 5%-"
             ];
           bindm =
             [
