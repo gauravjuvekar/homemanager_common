@@ -18,6 +18,7 @@
       ../../common/interactive_gjuvekar-com.nix
       ../../common/interactive_yubikey.nix
       ../../common/user_gjuvekar-com.nix
+      ./monitors.nix
     ];
 
   fqdn = "dt.sc.gjuvekar.com";

@@ -78,5 +78,24 @@
         };
       xwayland.enable = true;
     };
+
+  systemd.user.services.shikane =
+    {
+      Unit =
+        {
+          Description = "Wayland display autorandr in hyprland session";
+          After = [ "hyprland-session-pre.target" ];
+          PartOf = [ "hyprland-session.target" ];
+        };
+      Service =
+        {
+          ExecStart = "${pkgs.shikane}/bin/shikane";
+          Type = "exec";
+        };
+      Install =
+        {
+          WantedBy = [ "hyprland-session.target" ];
+        };
+    };
 }
 
