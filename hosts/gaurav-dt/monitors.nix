@@ -25,5 +25,6 @@ enable = true
 mode = "3840x2160@144.00Hz"
 position = "3072,0"
 scale = 1.25
+adaptive_sync = true
     '';
 }
