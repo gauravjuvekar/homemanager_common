@@ -12,7 +12,7 @@
         {
           "$mod" = "SUPER";
           "$modS" = "SUPER_SHIFT";
-          "$fileManager" = "${pkgs.cinnamon.nemo}/bin/nemo";
+          "$fileManager" = "${pkgs.nemo}/bin/nemo";
           "$logout" = "${pkgs.wlogout}/bin/wlogout";
           "$menu" =  "${pkgs.fuzzel}/bin/fuzzel";
           "$terminal" = "${pkgs.alacritty}/bin/alacritty";

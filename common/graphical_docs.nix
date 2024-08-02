@@ -1,8 +1,7 @@
-{ config, pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.packages = with pkgs;
     [
-      cinnamon.xreader
+      xreader
       pdfarranger
     ];
 }
