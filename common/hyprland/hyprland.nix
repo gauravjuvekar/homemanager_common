@@ -83,23 +83,41 @@
       xwayland.enable = true;
     };
 
-  systemd.user.services.shikane =
-    {
-      Unit =
-        {
-          Description = "Wayland display autorandr in hyprland session";
-          After = [ "hyprland-session-pre.target" ];
-          PartOf = [ "hyprland-session.target" ];
-        };
-      Service =
-        {
-          ExecStart = "${pkgs.shikane}/bin/shikane";
-          Type = "exec";
-        };
-      Install =
-        {
-          WantedBy = [ "hyprland-session.target" ];
-        };
-    };
+    systemd.user.services =
+      let
+        startupService =
+          (
+            {desc, cmd}:
+            {
+              Unit =
+                {
+                  Description = desc;
+                  After = [ "hyprland-session-pre.target" ];
+                  PartOf = [ "hyprland-session.target" ];
+                };
+              Service =
+                {
+                  ExecStart = cmd;
+                  Type = "exec";
+                };
+              Install =
+                {
+                  WantedBy = [ "hyprland-session.target" ];
+                };
+              }
+          );
+      in
+      {
+        shikane =
+          startupService {
+            desc="Wayland display autorandr in hyprland session";
+            cmd="${pkgs.shikane}/bin/shikane";
+          };
+        swaync =
+          startupService {
+            desc="Sway notification center in hyprland session";
+            cmd="${pkgs.swaynotificationcenter}/bin/swaync";
+          };
+      };
 }
 
