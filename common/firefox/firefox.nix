@@ -98,6 +98,7 @@
                         ];
                       "unified-extensions-area" =
                         [
+                          "sponsorblocker_ajay_app-browser-action"
                           "_ddc62400-f22d-4dd3-8b4a-05837de53c2e_-browser-action" # read aloud
                           "_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action" # vimium
                           "_tst-search-browser-action"
@@ -165,6 +166,7 @@
               read-aloud
               redirector
               simple-tab-groups
+              sponsorblock
               stylus
               tab-reloader
               tab-retitle
