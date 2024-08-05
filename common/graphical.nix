@@ -16,7 +16,7 @@
       bless
       blueberry
       dconf-editor
-      flameshot
+      (flameshot.overrideAttrs {enableWlrSupport = true;})
       gnome-font-viewer
       gnome-system-monitor
       screenkey
