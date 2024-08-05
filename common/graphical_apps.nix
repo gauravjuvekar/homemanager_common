@@ -1,9 +1,13 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
+  imports =
+    [
+      ./firefox/firefox.nix
+    ];
+
   home.packages = with pkgs;
     [
       chromium
-      firefox
       libreoffice
       mpv
       obs-studio
