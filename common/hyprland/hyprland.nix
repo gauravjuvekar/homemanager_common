@@ -18,6 +18,10 @@
           "$terminal" = "${pkgs.alacritty}/bin/alacritty";
           "$volChangeCmd" = "wpctl set-volume @DEFAULT_AUDIO_SINK@";
           "$volMuteCmd" = "wpctl set-mute @DEFAULT_AUDIO_SINK@";
+          animation =
+            [
+              "global, 1, 2, default"
+            ];
           bind =
             [
               "$mod,  C,     killactive"
