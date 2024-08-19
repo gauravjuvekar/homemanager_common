@@ -3,7 +3,7 @@
   home.packages = with pkgs;
     [
       cargo
-      # FTBFS
+      # FTBFS nixpkgs#335192
       # cargo-audit
       cargo-depgraph
       cargo-lock
