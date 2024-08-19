@@ -1,4 +1,4 @@
-{ firefox-addons, ... }:
+{ firefox-addons, lib, ... }:
 {
   programs.firefox =
     {
@@ -6,7 +6,7 @@
       profiles."Personal" =
         {
           name = "Personal";
-          isDefault=false;
+          isDefault= (lib.mkDefault false);
           id = 0;
           settings =
             {
