@@ -5,6 +5,18 @@
       (
         pkgs.writeShellApplication
           {
+            name = "g-bp";
+            runtimeInputs =
+              [
+                pkgs.git
+                pkgs.ripgrep
+              ];
+            text = (builtins.readFile ./g-bp);
+          }
+      )
+      (
+        pkgs.writeShellApplication
+          {
             name = "g-clean-untracked";
             runtimeInputs =
               [
