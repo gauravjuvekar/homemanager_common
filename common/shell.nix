@@ -1,5 +1,10 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
+  imports =
+    [
+      ./myapps/myapps.nix
+    ];
+
   programs.bash.enable = true;
 
   home.shellAliases =
