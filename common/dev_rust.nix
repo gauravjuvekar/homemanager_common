@@ -3,7 +3,8 @@
   home.packages = with pkgs;
     [
       cargo
-      cargo-audit
+      # FTBFS
+      # cargo-audit
       cargo-depgraph
       cargo-lock
       cargo-play
