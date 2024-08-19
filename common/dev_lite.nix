@@ -40,6 +40,7 @@ in
       git-repo
       glab
       patchutils
+      repgrep
       sqlite
       ydiff
     ];
