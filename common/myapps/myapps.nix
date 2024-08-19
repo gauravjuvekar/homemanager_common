@@ -5,6 +5,18 @@
       (
         pkgs.writeShellApplication
           {
+            name = "g-mirror-except";
+            runtimeInputs =
+              [
+                pkgs.git
+                pkgs.ripgrep
+              ];
+            text = (builtins.readFile ./g-mirror-except);
+          }
+      )
+      (
+        pkgs.writeShellApplication
+          {
             name = "g-bp";
             runtimeInputs =
               [
