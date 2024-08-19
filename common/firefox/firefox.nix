@@ -6,7 +6,7 @@
       profiles."Personal" =
         {
           name = "Personal";
-          id = 0;
+          id = 10;
           settings =
             {
               "app.shield.optoutstudies.enabled" = false;
