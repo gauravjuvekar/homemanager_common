@@ -5,6 +5,37 @@
       ../wayland/wayland.nix
     ];
 
+  programs.hyprlock =
+    {
+      enable = true;
+      settings =
+        {
+          general =
+            {
+              no_fade_in = true;
+              no_fade_out = true;
+            };
+          background =
+            [
+              {
+                path = "";
+                blur_passes = 3;
+                blur_size = 8;
+              }
+            ];
+          input-field =
+            [
+              {
+                monitor = "";
+                fade_on_empty = false;
+                fail_text = "($ATTEMPTS) | $FAIL";
+                placeholder_text = "$PROMPT ";
+                size = "500, 50";
+              }
+            ];
+        };
+    };
+
   programs.wlogout =
     {
       enable = true;
@@ -12,7 +43,7 @@
         [
           {
             "label" = "lock";
-            "action" = "loginctl lock-session";
+            "action" = "${config.programs.hyprlock.package}/bin/hyprlock";
             "text" = "Lock (l)";
             "keybind" = "l";
           }
