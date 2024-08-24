@@ -1,9 +1,53 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports =
     [
       ../wayland/wayland.nix
     ];
+
+  programs.wlogout =
+    {
+      enable = true;
+      layout =
+        [
+          {
+            "label" = "lock";
+            "action" = "loginctl lock-session";
+            "text" = "Lock (l)";
+            "keybind" = "l";
+          }
+          {
+            "label" = "hibernate";
+            "action" = "systemctl hibernate";
+            "text" = "Hibernate (h)";
+            "keybind" = "h";
+          }
+          {
+            "label" = "logout";
+            "action" = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch exit";
+            "text" = "Logout (e)";
+            "keybind" = "e";
+          }
+          {
+            "label" = "shutdown";
+            "action" = "systemctl poweroff";
+            "text" = "Shutdown (s)";
+            "keybind" = "s";
+          }
+          {
+            "label" = "suspend";
+            "action" = "systemctl suspend";
+            "text" = "Suspend (u)";
+            "keybind" = "u";
+          }
+          {
+            "label" = "reboot";
+            "action" = "systemctl reboot";
+            "text" = "Reboot (r)";
+            "keybind" = "r";
+          }
+        ];
+    };
 
   wayland.windowManager.hyprland =
     {
@@ -13,7 +57,7 @@
           "$mod" = "SUPER";
           "$modS" = "SUPER_SHIFT";
           "$fileManager" = "${pkgs.nemo}/bin/nemo";
-          "$logout" = "${pkgs.wlogout}/bin/wlogout";
+          "$logout" = "${config.programs.wlogout.package}/bin/wlogout";
           "$menu" =  "${pkgs.fuzzel}/bin/fuzzel";
           "$terminal" = "${pkgs.alacritty}/bin/alacritty";
           "$volChangeCmd" = "wpctl set-volume @DEFAULT_AUDIO_SINK@";
