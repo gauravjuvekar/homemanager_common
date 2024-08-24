@@ -139,7 +139,6 @@
               "network.dns.disablePrefetch" = true;
               "network.predictor.enabled" = false;
               "network.prefetch-next" = false;
-              "network.trr.mode" = 3;
               "network.trr.uri" = "https://mozilla.cloudflare-dns.com/dns-query";
               "privacy.firstparty.isolate" = true;
               "signon.firefoxRelay.feature" = "disabled";
