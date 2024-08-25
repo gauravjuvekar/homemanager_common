@@ -15,6 +15,7 @@ in
       with pkgs; [
           shikane
           wdisplays
+          wev
         ]
     ) ++
     [
