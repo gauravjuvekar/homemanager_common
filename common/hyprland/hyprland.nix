@@ -33,6 +33,26 @@
                 size = "500, 50";
               }
             ];
+          label =
+            [
+              {
+                monitor = "";
+                text = "cmd[update:1000] date --rfc-3339 seconds";
+                text_align = "center";
+                font_size = 50;
+                halign = "left";
+                valign = "center";
+              }
+              {
+                monitor = "";
+                text = "${config.fullname} (${config.home.username})<br/>${config.fqdn}";
+                text_align = "center";
+                halign = "left";
+                valign = "center";
+                font_size = 50;
+                position = "400, -50";
+              }
+            ];
         };
     };
 
