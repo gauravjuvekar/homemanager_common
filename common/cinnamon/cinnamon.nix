@@ -45,7 +45,6 @@
         {
           "options" =
             [
-              "caps\tcaps:swapescape"
               "terminate\tterminate:ctrl_alt_bksp"
             ];
         };

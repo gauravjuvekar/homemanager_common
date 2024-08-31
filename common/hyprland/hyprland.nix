@@ -166,10 +166,6 @@
               gaps_out = 0;
               resize_on_border = true;
             };
-          input =
-            {
-              kb_options = "caps:swapescape";
-            };
           misc =
             {
               force_default_wallpaper = 0;
