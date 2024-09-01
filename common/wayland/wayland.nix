@@ -16,6 +16,7 @@ in
           shikane
           wdisplays
           wev
+          wl-clipboard
         ]
     ) ++
     [
