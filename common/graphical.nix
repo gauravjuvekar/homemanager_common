@@ -6,6 +6,7 @@
       ./cinnamon/cinnamon.nix
       ./graphical_xdg.nix
       ./hyprland/hyprland.nix
+      ./keyboards/keyboards_graphical.nix
       ./nemo/nemo.nix
     ];
 
