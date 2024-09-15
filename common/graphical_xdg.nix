@@ -6,6 +6,7 @@
       enable = true;
       defaultApplications =
         {
+          "applicaiton/gzip" = "org.gnome.FileRoller.desktop";
           "applicaiton/x-extension-htm" = "firefox.desktop";
           "applicaiton/x-extension-html" = "firefox.desktop";
           "applicaiton/x-extension-shtml" = "firefox.desktop";
