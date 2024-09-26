@@ -13,10 +13,12 @@
           "applicaiton/x-extension-xht" = "firefox.desktop";
           "applicaiton/x-extension-xhtml" = "firefox.desktop";
           "applicaiton/xhtml+xml" = "firefox.desktop";
+          "applicaiton/zip" = "org.gnome.FileRoller.desktop";
           "application/pdf" = "xreader.desktop";
           "image/jpeg" = "xviewer.desktop";
           "image/png" = "xviewer.desktop";
           "image/svg+xml" = "xviewer.desktop";
+          "image/tiff" = "xviewer.desktop";
           "inode/directory" = "nemo.desktop";
           "text/html" = "firefox.desktop";
           "text/plain" = "nvim.desktop";
