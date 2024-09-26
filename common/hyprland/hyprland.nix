@@ -128,11 +128,13 @@
               "$mod,  Q,     killactive"
               "$mod,  R,     exec,                   $menu"
               "$mod,  S,     togglespecialworkspace"
-              "$modS, S,     movetoworkspace,        special"
-              "$mod,  T,     exec,                   $terminal"
               "$mod,  SPACE, togglefloating"
-              ", XF86AudioRaiseVolume, exec,         $volMuteCmd 0"
+              "$mod,  T,     exec,                   $terminal"
+              "$modS, N,     movegroupwindow,        f"
+              "$modS, P,     movegroupwindow,        b"
+              "$modS, S,     movetoworkspace,        special"
               ", XF86AudioMute,        exec,         $volMuteCmd toggle"
+              ", XF86AudioRaiseVolume, exec,         $volMuteCmd 0"
             ] ++
             (
               builtins.concatLists (
