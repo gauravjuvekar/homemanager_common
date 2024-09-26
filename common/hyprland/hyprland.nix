@@ -121,6 +121,7 @@
             [
               "$mod,  C,     killactive"
               "$mod,  F,     exec,           $fileManager"
+              "$mod,  G,     togglegroup"
               "$mod,  M,     exec,           $logout"
               "$mod,  Q,     killactive"
               "$mod,  R,     exec,           $menu"
@@ -145,7 +146,7 @@
                     ]
                   ) [
                     {mod="$mod";  action="movefocus";}
-                    {mod="$modS"; action="movewindow";}
+                    {mod="$modS"; action="movewindoworgroup";}
                   ]
                 )
             );
