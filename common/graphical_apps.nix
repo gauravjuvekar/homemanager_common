@@ -12,6 +12,7 @@
       mpv
       obs-studio
       openshot-qt
+      qalculate-gtk
       thunderbird
       vlc
     ];
