@@ -120,15 +120,17 @@
           bind =
             [
               "$mod,  C,     killactive"
-              "$mod,  F,     exec,           $fileManager"
+              "$mod,  F,     exec,              $fileManager"
               "$mod,  G,     togglegroup"
-              "$mod,  M,     exec,           $logout"
+              "$mod,  M,     exec,              $logout"
+              "$mod,  N,     changegroupactive, f"
+              "$mod,  P,     changegroupactive, b"
               "$mod,  Q,     killactive"
-              "$mod,  R,     exec,           $menu"
-              "$mod,  T,     exec,           $terminal"
+              "$mod,  R,     exec,              $menu"
+              "$mod,  T,     exec,              $terminal"
               "$mod,  SPACE, togglefloating"
-              ", XF86AudioRaiseVolume, exec, $volMuteCmd 0"
-              ", XF86AudioMute,        exec, $volMuteCmd toggle"
+              ", XF86AudioRaiseVolume, exec,    $volMuteCmd 0"
+              ", XF86AudioMute,        exec,    $volMuteCmd toggle"
             ] ++
             (
               builtins.concatLists (
