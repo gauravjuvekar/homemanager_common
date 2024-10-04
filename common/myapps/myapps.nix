@@ -5,6 +5,50 @@
       (
         pkgs.writeShellApplication
           {
+            name = "cm";
+            runtimeInputs =
+              [
+                pkgs.git
+              ];
+            text = (builtins.readFile ./cm);
+          }
+      )
+      (
+        pkgs.writeShellApplication
+          {
+            name = "cam";
+            runtimeInputs =
+              [
+                pkgs.git
+              ];
+            text = (builtins.readFile ./cam);
+          }
+      )
+      (
+        pkgs.writeShellApplication
+          {
+            name = "cum";
+            runtimeInputs =
+              [
+                pkgs.git
+              ];
+            text = (builtins.readFile ./cum);
+          }
+      )
+      (
+        pkgs.writeShellApplication
+          {
+            name = "cuam";
+            runtimeInputs =
+              [
+                pkgs.git
+              ];
+            text = (builtins.readFile ./cuam);
+          }
+      )
+      (
+        pkgs.writeShellApplication
+          {
             name = "g-mirror-except";
             runtimeInputs =
               [
