@@ -14,12 +14,12 @@
     [
       arandr
       baobab
-      bless
       blueberry
       dconf-editor
       (flameshot.overrideAttrs {enableWlrSupport = true;})
       gnome-font-viewer
       gnome-system-monitor
+      imhex
       screenkey
       seahorse
       shutter
