@@ -40,6 +40,7 @@ in
       git-filter-repo
       git-repo
       glab
+      jsonschema
       patchutils
       repgrep
       sqlite
