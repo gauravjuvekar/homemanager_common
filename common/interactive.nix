@@ -1,10 +1,11 @@
-{  pkgs, ... }:
+{ pkgs, ... }:
 {
   imports =
     [
       ./gpg/gpg.nix
       ./keyboards/keyboards_interactive.nix
       ./parallel/parallel.nix
+      ./tmux/tmux.nix
     ];
   home.packages = with pkgs;
     [
@@ -32,7 +33,6 @@
       sshfs
       sshpass
       step-cli
-      tmux
       unzip
       watchexec
       yq
