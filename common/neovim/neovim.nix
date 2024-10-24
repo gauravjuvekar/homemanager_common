@@ -12,6 +12,7 @@
       perlnavigator
       pyright
       tree-sitter
+      yaml-language-server
     ];
 
   home.sessionVariables =
