@@ -7,5 +7,6 @@
       kubectl
       kubectl-validate
       podman-tui
+      skopeo
     ];
 }
