@@ -24,6 +24,7 @@
       nodePackages.vscode-json-languageserver
       perlnavigator
       pyright
+      stylua
       tree-sitter
       yaml-language-server
     ];
