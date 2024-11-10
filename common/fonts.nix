@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
+{ droid-sans-mono-dotted, pkgs, ... }:
 {
+  fonts.fontconfig.enable = true;
   home.packages = with pkgs;
     [
       cantarell-fonts
       # corefonts
       dejavu_fonts
+      droid-sans-mono-dotted.droid-sans-mono-dotted-nerdfont
       gyre-fonts
       liberation_ttf
       libertine
@@ -12,8 +14,6 @@
       nerdfonts
       noto-fonts
       open-fonts
-      powerline-fonts
-      powerline-symbols
       proggyfonts
     ];
 }

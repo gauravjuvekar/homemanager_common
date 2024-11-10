@@ -3,17 +3,29 @@
 
   inputs =
     {
+      flake-utils.url = "github:numtide/flake-utils";
+
+      droid-sans-mono-dotted =
+        {
+          url = "github:gauravjuvekar/droid-sans-mono-dotted";
+          inputs.nixpkgs.follows = "nixpkgs";
+          inputs.flake-utils.follows = "flake-utils";
+        };
+
+      firefox-addons =
+        {
+          url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+          inputs.nixpkgs.follows = "nixpkgs";
+          inputs.flake-utils.follows = "flake-utils";
+        };
+
       home-manager =
         {
           url = "github:nix-community/home-manager";
           inputs.nixpkgs.follows = "nixpkgs";
         };
+
       nixpkgs.url = "github:NixOS/nixpkgs";
-      firefox-addons =
-        {
-          url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-          inputs.nixpkgs.follows = "nixpkgs";
-        };
     };
 
   outputs = { ... }@inputs:
@@ -35,6 +47,7 @@
       extraSpecialArgs =
         {
           firefox-addons = inputs.firefox-addons.outputs.packages.${system};
+          droid-sans-mono-dotted = inputs.droid-sans-mono-dotted.outputs.packages.${system};
         };
     in
     {

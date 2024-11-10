@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   programs.alacritty =
     {
@@ -13,7 +13,7 @@
             {
               normal =
                 {
-                  family = "Droid Sans Mono Dotted for Powerline";
+                  family = "DroidSansMDotted Nerd Font";
                   style = "Regular";
                 };
             };
