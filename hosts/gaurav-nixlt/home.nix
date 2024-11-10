@@ -4,6 +4,8 @@
     [
       ../../common/base.nix
       ../../common/dev_lite.nix
+      ../../common/dev_cxx.nix
+      ../../common/dev_rust.nix
       ../../common/fonts.nix
       ../../common/graphical.nix
       ../../common/graphical_admin.nix
