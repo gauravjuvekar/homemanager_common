@@ -1,9 +1,22 @@
 { pkgs, ... }:
 {
+  programs.neovim =
+    {
+      enable = true;
+      defaultEditor = true;
+      extraConfig =
+        ''
+          set runtimepath^=~/.vim runtimepath+=~/.vim/after
+          let &packpath = &runtimepath
+          source ~/.vim/vimrc
+        '';
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+    };
   home.packages = with pkgs;
     [
       lua-language-server
-      neovim
       nixd
       nodePackages.bash-language-server
       nodePackages.nodejs
@@ -14,16 +27,4 @@
       tree-sitter
       yaml-language-server
     ];
-
-  home.sessionVariables =
-    {
-      EDITOR = "nvim";
-    };
-
-  xdg.configFile."nvim/init.vim".text =
-    ''
-      set runtimepath^=~/.vim runtimepath+=~/.vim/after
-      let &packpath = &runtimepath
-      source ~/.vim/vimrc
-    '';
 }
