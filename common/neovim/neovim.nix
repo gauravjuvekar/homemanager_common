@@ -16,6 +16,7 @@
     };
   home.packages = with pkgs;
     [
+      ltex-ls
       lua-language-server
       nixd
       nodePackages.bash-language-server
@@ -26,6 +27,7 @@
       pyright
       stylua
       tree-sitter
+      vale
       yaml-language-server
     ];
 }
