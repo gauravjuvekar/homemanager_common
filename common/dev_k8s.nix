@@ -9,4 +9,9 @@
       podman-tui
       skopeo
     ];
+
+  home.shellAliases =
+    {
+      "k" = "kubectl";
+    };
 }
