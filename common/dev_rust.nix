@@ -15,6 +15,7 @@
       rust-analyzer
       rustc
       rustfmt
+      wasm-bindgen-cli
     ];
 
   xdg.configFile."rustfmt/rustfmt".text =
