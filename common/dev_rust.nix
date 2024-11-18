@@ -4,6 +4,7 @@
     [
       cargo
       cargo-audit
+      cargo-binutils
       cargo-depgraph
       cargo-lock
       cargo-play
