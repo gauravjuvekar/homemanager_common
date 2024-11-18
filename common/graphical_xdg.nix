@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   xdg.mime.enable = true;
   xdg.mimeApps =
@@ -19,6 +19,7 @@
           "image/png" = "xviewer.desktop";
           "image/svg+xml" = "xviewer.desktop";
           "image/tiff" = "xviewer.desktop";
+          "image/vnd.microsoft.icon" = "xviewer.desktop";
           "inode/directory" = "nemo.desktop";
           "text/html" = "firefox.desktop";
           "text/plain" = "nvim.desktop";
