@@ -11,9 +11,9 @@
       liberation_ttf
       libertine
       monaspace
-      nerdfonts
       noto-fonts
       open-fonts
       proggyfonts
-    ];
+    ] ++ builtins.filter lib.attrsets.isDerivation (
+      builtins.attrValues pkgs.nerd-fonts);
 }
