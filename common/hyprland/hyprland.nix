@@ -178,6 +178,7 @@
               force_default_wallpaper = 0;
             };
         };
+      systemd.enable = false;
       xwayland.enable = true;
     };
 
@@ -190,8 +191,8 @@
               Unit =
                 {
                   Description = desc;
-                  After = [ "hyprland-session-pre.target" ];
-                  PartOf = [ "hyprland-session.target" ];
+                  After = [ "wayland-session-pre@Hyprland.target" ];
+                  PartOf = [ "wayland-session@Hyprland.target" ];
                 };
               Service =
                 {
@@ -200,7 +201,7 @@
                 };
               Install =
                 {
-                  WantedBy = [ "hyprland-session.target" ];
+                  WantedBy = [ "wayland-session@Hyprland.target" ];
                 };
               }
           );
