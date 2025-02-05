@@ -42,6 +42,7 @@
                 font_size = 50;
                 halign = "left";
                 valign = "center";
+                position = "350, 100";
               }
               {
                 monitor = "";
@@ -50,7 +51,7 @@
                 halign = "left";
                 valign = "center";
                 font_size = 50;
-                position = "400, -50";
+                position = "400, -100";
               }
             ];
         };
