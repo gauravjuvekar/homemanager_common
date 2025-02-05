@@ -191,8 +191,9 @@
               Unit =
                 {
                   Description = desc;
-                  After = [ "wayland-session-pre@Hyprland.target" ];
+                  After = [ "wayland-session@Hyprland.target" ];
                   PartOf = [ "wayland-session@Hyprland.target" ];
+                  BindsTo = [ "wayland-session@Hyprland.target" ];
                 };
               Service =
                 {
