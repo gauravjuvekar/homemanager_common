@@ -26,6 +26,8 @@
         };
 
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+      pinned-inkscape.url = "github:NixOS/nixpkgs/26baeceed3a5ab67791b1456ff710fe97b661639";
     };
 
   outputs = { ... }@inputs:
@@ -44,6 +46,14 @@
                 );
             };
         };
+      overlays =
+        [
+          (final: prev:
+            {
+              inkscape = inputs.pinned-inkscape.legacyPackages.${prev.system}.inkscape;
+            }
+          )
+        ];
       extraSpecialArgs =
         {
           firefox-addons = inputs.firefox-addons.outputs.packages.${system};
@@ -57,6 +67,7 @@
           inherit extraSpecialArgs;
           modules =
             [
+              ({...}:{nixpkgs.overlays = overlays;})
               ./hosts/gaurav-dt/home.nix
             ];
         };
@@ -66,6 +77,7 @@
           inherit extraSpecialArgs;
           modules =
             [
+              ({...}:{nixpkgs.overlays = overlays;})
               ./hosts/gaurav-nixlt/home.nix
             ];
         };

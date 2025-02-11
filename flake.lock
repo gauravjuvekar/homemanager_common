@@ -102,13 +102,30 @@
         "type": "github"
       }
     },
+    "pinned-inkscape": {
+      "locked": {
+        "lastModified": 1733881728,
+        "narHash": "sha256-E/NfKTNHvBBjBHdSv1Dgn5kRzJcymH/xgXZ3sGoHmV8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "26baeceed3a5ab67791b1456ff710fe97b661639",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "26baeceed3a5ab67791b1456ff710fe97b661639",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "droid-sans-mono-dotted": "droid-sans-mono-dotted",
         "firefox-addons": "firefox-addons",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "pinned-inkscape": "pinned-inkscape"
       }
     },
     "systems": {
