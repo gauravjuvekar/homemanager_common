@@ -111,6 +111,7 @@
           "$fileManager" = "${pkgs.nemo}/bin/nemo";
           "$logout" = "${config.programs.wlogout.package}/bin/wlogout";
           "$menu" =  "${pkgs.fuzzel}/bin/fuzzel";
+          "$screenshotTool" = "wayland-screenshot";
           "$terminal" = "${pkgs.alacritty}/bin/alacritty";
           "$volChangeCmd" = "wpctl set-volume @DEFAULT_AUDIO_SINK@";
           "$volMuteCmd" = "wpctl set-mute @DEFAULT_AUDIO_SINK@";
@@ -133,6 +134,7 @@
               "$mod,  T,     exec,                   $terminal"
               "$modS, N,     movegroupwindow,        f"
               "$modS, P,     movegroupwindow,        b"
+              "$modS, R,     exec,                   $screenshotTool"
               "$modS, S,     movetoworkspace,        special"
               ", XF86AudioMute,        exec,         $volMuteCmd toggle"
               ", XF86AudioRaiseVolume, exec,         $volMuteCmd 0"
