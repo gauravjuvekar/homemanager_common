@@ -21,6 +21,7 @@
           "image/tiff" = "xviewer.desktop";
           "image/vnd.microsoft.icon" = "xviewer.desktop";
           "inode/directory" = "nemo.desktop";
+          "message/rfc822" = "thunderbird.desktop";
           "text/html" = "firefox.desktop";
           "text/plain" = "nvim.desktop";
           "text/x-vcalendar" = "thunderbird.desktop";
