@@ -71,4 +71,16 @@
       enableBashIntegration = true;
     };
   programs.fzf.enable = true;
+
+  programs.atuin =
+    {
+      enable = true;
+      enableBashIntegration = true;
+      settings =
+        {
+          auto_sync = false;
+          update_check = false;
+          enter_accept = false;
+        };
+    };
 }
