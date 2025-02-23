@@ -5,7 +5,7 @@
       imagemagick
       pandoc
       pdftk
-      python3Packages.pdftotext
+      poppler_utils # pdftotext
       qpdf
     ];
 }

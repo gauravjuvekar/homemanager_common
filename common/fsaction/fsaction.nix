@@ -6,7 +6,7 @@ in
   home.packages =
     [
       fsaction_pkg
-      pkgs.python3Packages.pdftotext
+      pkgs.poppler_utils # pdftotext
     ];
 
   systemd.user.services =
