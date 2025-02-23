@@ -6,6 +6,7 @@ in
   home.packages =
     [
       fsaction_pkg
+      pkgs.python3Packages.pdftotext
     ];
 
   systemd.user.services =
