@@ -11,6 +11,6 @@
       calibre
       clementine
       kid3-qt
-      python312Packages.eyed3
+      python3Packages.eyed3
     ];
 }

@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs;
     [
       imagemagick
       pandoc
       pdftk
-      python312Packages.pdftotext
+      python3Packages.pdftotext
       qpdf
     ];
 }
