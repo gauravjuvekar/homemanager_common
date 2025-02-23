@@ -28,6 +28,12 @@
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
       pinned-inkscape.url = "github:NixOS/nixpkgs/26baeceed3a5ab67791b1456ff710fe97b661639";
+      fsaction =
+        {
+          url = "github:gauravjuvekar/fsaction";
+          inputs.nixpkgs.follows = "nixpkgs";
+          inputs.flake-utils.follows = "flake-utils";
+        };
     };
 
   outputs = { ... }@inputs:
@@ -56,6 +62,7 @@
         ];
       extraSpecialArgs =
         {
+          inputs = inputs;
           firefox-addons = inputs.firefox-addons.outputs.packages.${system};
           droid-sans-mono-dotted = inputs.droid-sans-mono-dotted.outputs.packages.${system};
         };

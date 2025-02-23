@@ -66,6 +66,29 @@
         "type": "github"
       }
     },
+    "fsaction": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1740273075,
+        "narHash": "sha256-d0Tol4v7JbuucgCR0vB34kI/CPnLSDs3z2pI/b+3vYc=",
+        "owner": "gauravjuvekar",
+        "repo": "fsaction",
+        "rev": "724944f0e137a85da024ea78d31a56580825241e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gauravjuvekar",
+        "repo": "fsaction",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -123,6 +146,7 @@
         "droid-sans-mono-dotted": "droid-sans-mono-dotted",
         "firefox-addons": "firefox-addons",
         "flake-utils": "flake-utils",
+        "fsaction": "fsaction",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "pinned-inkscape": "pinned-inkscape"
