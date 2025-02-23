@@ -21,10 +21,6 @@ in
               Type = "exec";
               ExecStart = "${fsaction_pkg}/bin/fsaction \"%f\"";
             };
-          Install =
-            {
-              WantedBy = [ "default.target" ];
-            };
         };
     };
 }
