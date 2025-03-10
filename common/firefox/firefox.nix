@@ -146,7 +146,7 @@
               "trailhead.firstrun.didSeeAboutWelcome" = true;
               "ui.context_menus.after_mouseup" = true;
             };
-          extensions = with firefox-addons;
+          extensions.packages = with firefox-addons;
             [
               # These unfree extensions cannot be installed due to bug
               # https://gitlab.com/rycee/nur-expressions/-/issues/244
