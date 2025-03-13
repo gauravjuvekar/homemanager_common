@@ -6,6 +6,7 @@
       helm
       kubectl
       kubectl-validate
+      kubectx
       podman
       podman-tui
       skopeo
