@@ -108,6 +108,10 @@
         {
           "$mod" = "SUPER";
           "$modS" = "SUPER_SHIFT";
+          "$modA" = "SUPER_ALT";
+          "$modAS" = "SUPER_ALT_SHIFT";
+          "$modC" = "SUPER_CTRL";
+          "$modCS" = "SUPER_CTRL_SHIFT";
           "$fileManager" = "${pkgs.nemo}/bin/nemo";
           "$logout" = "${config.programs.wlogout.package}/bin/wlogout";
           "$menu" =  "${pkgs.fuzzel}/bin/fuzzel";
@@ -138,6 +142,24 @@
               "$modS, S,     movetoworkspace,        special"
               ", XF86AudioMute,        exec,         $volMuteCmd toggle"
               ", XF86AudioRaiseVolume, exec,         $volMuteCmd 0"
+
+              "$modCS, H,     movecurrentworkspacetomonitor,  l"
+              "$modCS, left,  movecurrentworkspacetomonitor,  l"
+              "$modCS, L,     movecurrentworkspacetomonitor,  r"
+              "$modCS, right, movecurrentworkspacetomonitor,  r"
+
+              "$modC,  J,     focusworkspaceoncurrentmonitor, m+1"
+              "$modC,  down,  focusworkspaceoncurrentmonitor, m+1"
+              "$modC,  K,     focusworkspaceoncurrentmonitor, m-1"
+              "$modC,  up,    focusworkspaceoncurrentmonitor, m-1"
+
+              "$modC,  L,     focusworkspaceoncurrentmonitor, r+1"
+              "$modC,  right, focusworkspaceoncurrentmonitor, r+1"
+              "$modC,  H,     focusworkspaceoncurrentmonitor, r-1"
+              "$modC,  left,  focusworkspaceoncurrentmonitor, r-1"
+
+              "$modAS, J,     movetoworkspace,                r+1"
+              "$modAS, K,     movetoworkspace,                r-1"
             ] ++
             (
               builtins.concatLists (
