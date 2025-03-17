@@ -284,6 +284,11 @@
                   special-visible-only = true;
                 };
 
+              "hyprland/window" =
+                {
+                  separate-outputs = true;
+                };
+
               keyboard-state =
                 {
                   numlock = true;
