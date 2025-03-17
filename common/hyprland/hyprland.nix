@@ -279,7 +279,9 @@
               "hyprland/workspaces" =
                 {
                   disable-scroll = true;
-                  all-outputs = true;
+                  all-outputs = false;
+                  show-special = true;
+                  special-visible-only = true;
                 };
 
               keyboard-state =
