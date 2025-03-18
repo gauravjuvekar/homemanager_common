@@ -35,6 +35,8 @@
       step-cli
       unzip
       watchexec
+      watchlog
+      watchman
       yq
     ];
 }
