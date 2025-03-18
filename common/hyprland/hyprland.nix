@@ -347,6 +347,7 @@
                 };
             };
         };
+      style = ./waybar.css;
     };
 }
 
