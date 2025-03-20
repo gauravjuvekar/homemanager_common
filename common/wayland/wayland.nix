@@ -12,6 +12,12 @@ let
     ''
       ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)" - | ${pkgs.swappy}/bin/swappy -f -
     '';
+
+  mySommelier = pkgs.sommelier.overrideDerivation (oldAttrs:
+    {
+      # Bug https://github.com/NixOS/nixpkgs/issues/332332
+      doCheck = false;
+    });
 in
 {
   home.packages =
@@ -24,6 +30,7 @@ in
       ]
     ) ++
     [
+      mySommelier
       wayland_gui_allow_root
       wayland_gui_forbid_root
       wayland_screenshot
