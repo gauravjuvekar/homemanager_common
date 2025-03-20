@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  gtkTheme = "Mint-Y-Dark";
+in
 {
   imports =
     [
@@ -27,4 +30,10 @@
       xclip
       xorg.xkill
     ];
+
+  gtk.theme = gtkTheme;
+  home.sessionVariables =
+    {
+      GTK_THEME = gtkTheme;
+    };
 }
