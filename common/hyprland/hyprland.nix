@@ -202,6 +202,11 @@
             {
               force_default_wallpaper = 0;
             };
+          xwayland =
+            {
+              # Soft blur is better than pixelated
+              use_nearest_neighbor = false;
+            };
         };
       systemd.enable = false;
       xwayland.enable = true;
