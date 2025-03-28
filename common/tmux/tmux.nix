@@ -9,6 +9,7 @@
         ''
           bind-key -T copy-mode-vi 'v' send -X begin-selection
           bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+          set -as terminal-features "alacritty:RGB"
         '';
       focusEvents = true;
       historyLimit = 10000;
