@@ -143,23 +143,23 @@
               ", XF86AudioMute,        exec,         $volMuteCmd toggle"
               ", XF86AudioRaiseVolume, exec,         $volMuteCmd 0"
 
-              "$modCS, H,     movecurrentworkspacetomonitor,  l"
-              "$modCS, left,  movecurrentworkspacetomonitor,  l"
-              "$modCS, L,     movecurrentworkspacetomonitor,  r"
-              "$modCS, right, movecurrentworkspacetomonitor,  r"
+              "$modAS, H,     movecurrentworkspacetomonitor,  l"
+              "$modAS, left,  movecurrentworkspacetomonitor,  l"
+              "$modAS, L,     movecurrentworkspacetomonitor,  r"
+              "$modAS, right, movecurrentworkspacetomonitor,  r"
 
-              "$modC,  J,     focusworkspaceoncurrentmonitor, m+1"
-              "$modC,  down,  focusworkspaceoncurrentmonitor, m+1"
-              "$modC,  K,     focusworkspaceoncurrentmonitor, m-1"
-              "$modC,  up,    focusworkspaceoncurrentmonitor, m-1"
+              "$modC,  J,     focusworkspaceoncurrentmonitor, r+1"
+              "$modC,  down,  focusworkspaceoncurrentmonitor, r+1"
+              "$modC,  K,     focusworkspaceoncurrentmonitor, r-1"
+              "$modC,  up,    focusworkspaceoncurrentmonitor, r-1"
 
-              "$modC,  L,     focusworkspaceoncurrentmonitor, r+1"
-              "$modC,  right, focusworkspaceoncurrentmonitor, r+1"
-              "$modC,  H,     focusworkspaceoncurrentmonitor, r-1"
-              "$modC,  left,  focusworkspaceoncurrentmonitor, r-1"
+              "$modC,  L,     focusworkspaceoncurrentmonitor, m+1"
+              "$modC,  right, focusworkspaceoncurrentmonitor, m+1"
+              "$modC,  H,     focusworkspaceoncurrentmonitor, m-1"
+              "$modC,  left,  focusworkspaceoncurrentmonitor, m-1"
 
-              "$modAS, J,     movetoworkspace,                r+1"
-              "$modAS, K,     movetoworkspace,                r-1"
+              "$modCS, J,     movetoworkspace,                r+1"
+              "$modCS, K,     movetoworkspace,                r-1"
             ] ++
             (
               builtins.concatLists (
