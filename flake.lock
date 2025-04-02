@@ -76,11 +76,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1740273075,
-        "narHash": "sha256-d0Tol4v7JbuucgCR0vB34kI/CPnLSDs3z2pI/b+3vYc=",
+        "lastModified": 1743582061,
+        "narHash": "sha256-zX3l61XqmrJo7JRLIRk39bhWL5Gex2wFTDmSafxnA2w=",
         "owner": "gauravjuvekar",
         "repo": "fsaction",
-        "rev": "724944f0e137a85da024ea78d31a56580825241e",
+        "rev": "ac3d39ba056cfa7389c4082bcecb646263df8296",
         "type": "github"
       },
       "original": {
