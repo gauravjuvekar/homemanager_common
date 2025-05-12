@@ -35,5 +35,9 @@ in
       wayland_gui_forbid_root
       wayland_screenshot
     ];
+  xdg.configFile."uwsm/env".text =
+    ''
+      export NIXOS_OZONE_WL=1
+    '';
 }
 
