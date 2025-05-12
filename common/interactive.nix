@@ -22,6 +22,7 @@
       inotify-tools
       iotop
       jq
+      jqp
       libsecret
       moreutils
       openssl
