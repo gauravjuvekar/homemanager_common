@@ -3,10 +3,10 @@
   home.packages = with pkgs;
     [
       dive
-      helm
       kubectl
       kubectl-validate
       kubectx
+      kubernetes-helm
       podman
       podman-tui
       skopeo
