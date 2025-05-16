@@ -29,7 +29,7 @@
                 monitor = "";
                 fade_on_empty = false;
                 fail_text = "($ATTEMPTS) | $FAIL";
-                placeholder_text = "$PROMPT ";
+                placeholder_text = "$PAMPROMPT ";
                 size = "500, 50";
               }
             ];
