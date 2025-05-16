@@ -3,8 +3,8 @@
   imports =
     [
       ../../common/base.nix
-      ../../common/dev_lite.nix
       ../../common/dev_cxx.nix
+      ../../common/dev_lite.nix
       ../../common/dev_rust.nix
       ../../common/fonts.nix
       ../../common/graphical.nix
@@ -19,6 +19,7 @@
       ../../common/interactive_docs.nix
       ../../common/interactive_gjuvekar-com.nix
       ../../common/interactive_yubikey.nix
+      ../../common/laptop.nix
       ../../common/user_gjuvekar-com.nix
     ];
 
