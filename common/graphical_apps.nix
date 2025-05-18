@@ -8,6 +8,7 @@
   home.packages = with pkgs;
     [
       chromium
+      digikam
       libreoffice
       mpv
       obs-studio
