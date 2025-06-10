@@ -39,5 +39,42 @@ in
     ''
       export NIXOS_OZONE_WL=1
     '';
-}
 
+  systemd.user.services =
+    let
+      startupService =
+        (
+          {desc, cmd}:
+          {
+            Unit =
+              {
+                Description = desc;
+                After = [ "graphical-session.target" ];
+                PartOf = [ "graphical-session.target" ];
+                BindsTo = [ "graphical-session.target" ];
+              };
+            Service =
+              {
+                ExecStart = cmd;
+                Type = "exec";
+              };
+            Install =
+              {
+                WantedBy = [ "graphical-session.target" ];
+              };
+            }
+        );
+    in
+    {
+      shikane =
+        startupService {
+          desc="Wayland display autorandr";
+          cmd="${pkgs.shikane}/bin/shikane";
+        };
+      swaync =
+        startupService {
+          desc="Sway notification center";
+          cmd="${pkgs.swaynotificationcenter}/bin/swaync";
+        };
+    };
+}
