@@ -24,7 +24,8 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 
-xwayland-satellite {
+// not yet released
+/- xwayland-satellite {
     path "${xwayland_path}"
 }
 
