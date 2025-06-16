@@ -12,6 +12,7 @@ in
       ./hyprland/hyprland.nix
       ./keyboards/keyboards_graphical.nix
       ./nemo/nemo.nix
+      ./niri/niri.nix
     ];
 
   home.packages = with pkgs;
