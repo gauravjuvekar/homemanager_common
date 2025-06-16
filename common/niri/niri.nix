@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports =
     [
@@ -10,11 +10,23 @@
      xwayland-satellite
     ];
 
-  xdg.configFile."niri/config.kdl".text = ''
+  xdg.configFile."niri/config.kdl".text =
+    let
+      file_manager_path = "${pkgs.nemo}/bin/nemo";
+      logout_path = "${config.programs.wlogout.package}/bin/wlogout";
+      menu_path =  "${pkgs.fuzzel}/bin/fuzzel";
+      terminal_path = "${pkgs.alacritty}/bin/alacritty";
+      xwayland_path = "${pkgs.xwayland-satellite}/bin/xwayland-satellite";
+    in
+      ''
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+
+xwayland-satellite {
+    path "${xwayland_path}"
+}
 
 // Input device configuration.
 // Find the full list of options on the wiki:
@@ -266,9 +278,10 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "${terminal_path}"; }
+    Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "${menu_path}"; }
+    Mod+M hotkey-overlay-title="Lock the Screen: wlogout" { spawn "${logout_path}"; }
+    Mod+F hotkey-overlay-title="File manager" { spawn "${file_manager_path}"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -401,10 +414,10 @@ binds {
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
 
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
+    Mod+D { switch-preset-column-width; }
+    Mod+Shift+D { switch-preset-window-height; }
+    Mod+Ctrl+D { reset-window-height; }
+    Mod+S { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
