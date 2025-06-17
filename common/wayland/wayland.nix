@@ -20,6 +20,11 @@ let
     });
 in
 {
+  imports =
+    [
+      ./waybar/waybar.nix
+    ];
+
   home.packages =
     (
       with pkgs; [
