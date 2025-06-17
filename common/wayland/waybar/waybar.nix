@@ -14,11 +14,13 @@
               modules-left =
                 [
                   "hyprland/workspaces"
+                  "niri/workspaces"
                   "wlr/taskbar"
                 ];
               modules-center =
                 [
                   "hyprland/window"
+                  "niri/window"
                 ];
               modules-right =
                 [
@@ -31,6 +33,11 @@
                   "systemd-failed-units"
                 ];
 
+              "niri/workspaces" =
+                {
+                  all-outputs = false;
+                };
+
               "hyprland/workspaces" =
                 {
                   disable-scroll = true;
@@ -40,6 +47,11 @@
                 };
 
               "hyprland/window" =
+                {
+                  separate-outputs = true;
+                };
+
+              "niri/window" =
                 {
                   separate-outputs = true;
                 };
