@@ -2,7 +2,7 @@
 {
   imports =
     [
-      ../wayland/wayland.nix
+      ../wayland.nix
     ];
 
   home.packages = with pkgs;

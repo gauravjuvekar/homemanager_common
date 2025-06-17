@@ -9,10 +9,10 @@ in
       ./audio/audio_graphical.nix
       ./cinnamon/cinnamon.nix
       ./graphical_xdg.nix
-      ./hyprland/hyprland.nix
       ./keyboards/keyboards_graphical.nix
       ./nemo/nemo.nix
-      ./niri/niri.nix
+      ./wayland/hyprland/hyprland.nix
+      ./wayland/niri/niri.nix
     ];
 
   home.packages = with pkgs;
