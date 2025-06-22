@@ -40,10 +40,13 @@ in
       git-filter-repo
       git-repo
       glab
+      hexedit
+      hexyl
       jsonschema
       patchutils
       repgrep
       sqlite
+      xxd
       ydiff
     ];
 }
