@@ -29,6 +29,12 @@
     path "${xwayland_path}"
 }
 
+spawn-at-startup "${xwayland_path}" ":12"
+
+environment {
+    DISPLAY ":12"
+}
+
 input {
     keyboard {
         numlock
