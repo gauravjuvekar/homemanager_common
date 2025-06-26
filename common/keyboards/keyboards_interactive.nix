@@ -5,7 +5,7 @@
       dfu-util
       keymapviz
       qmk
-      via
+      # via # suddenly shows as unfree
       wally-cli
     ];
 }
