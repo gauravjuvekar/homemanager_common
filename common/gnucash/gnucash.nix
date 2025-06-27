@@ -1,8 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   home.packages = with pkgs;
     [
-      bindfs
       gnucash
     ];
 
@@ -15,11 +14,23 @@
               Description = "Read only mount of gnucash for libreoffice base odbc connector";
             };
           Mount =
+            let
+              pkg_list =
+                [
+                  pkgs.bindfs
+                  pkgs.coreutils
+                  pkgs.findutils
+                  pkgs.gnugrep
+                  pkgs.gnused
+                ];
+                path = "${lib.makeBinPath pkg_list}:${lib.makeSearchPathOutput "bin" "sbin" pkg_list}";
+            in
             {
               What = "%h/Documents/finances/gnucash";
               Where = "/home/${config.home.username}/mnt/gnucash_readonly";
               Type = "fuse.bindfs";
               Options = "ro,x-gvfs-hide";
+              Environment = "PATH=${path}";
             };
           Install =
             {
