@@ -10,6 +10,29 @@
      xwayland-satellite
     ];
 
+  systemd.user.services =
+    {
+      xwayland-satellite =
+        {
+          Unit =
+            {
+              Description = "xwayland-satellite bridge for Niri";
+              After = [ "niri.service" ];
+              BindsTo = [ "niri.service" ];
+              PartOf = [ "niri.service" ];
+            };
+          Service =
+            {
+              ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite :12";
+              Type = "exec";
+            };
+          Install =
+            {
+              WantedBy = [ "niri.service" ];
+            };
+        };
+    };
+
   xdg.configFile."niri/config.kdl".text =
     let
       file_manager_path = "${pkgs.nemo}/bin/nemo";
@@ -28,8 +51,6 @@
 /- xwayland-satellite {
     path "${xwayland_path}"
 }
-
-spawn-at-startup "${xwayland_path}" ":12"
 
 environment {
     DISPLAY ":12"
