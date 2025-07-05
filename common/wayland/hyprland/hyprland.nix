@@ -76,7 +76,8 @@
           }
           {
             "label" = "logout";
-            "action" = "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch exit";
+            "action" =
+              "${config.wayland.windowManager.hyprland.finalPackage}/bin/hyprctl dispatch exit || ${pkgs.niri}/bin/niri msg action quit";
             "text" = "Logout (e)";
             "keybind" = "e";
           }
@@ -108,7 +109,7 @@
         {
           general =
             {
-              after_sleep_cmd = "hyprctl dispatch dpms on";
+              after_sleep_cmd = "hyprctl dispatch dpms on || ${pkgs.niri}/bin/niri msg action power-on-monitors";
               before_sleep_cmd = "loginctl lock-session";
               lock_cmd = "pidof hyprlock || ${config.programs.hyprlock.package}/bin/hyprlock";
             };
@@ -125,8 +126,8 @@
               }
               {
                 timeout = 500;
-                on-timeout = "hyprctl dispatch dpms off";
-                on-resume = "hyprctl dispatch dpms on";
+                on-timeout = "hyprctl dispatch dpms off || ${pkgs.niri}/bin/niri msg action power-off-monitors";
+                on-resume = "hyprctl dispatch dpms on || ${pkgs.niri}/bin/niri msg action power-on-monitors";
               }
             ];
         };
