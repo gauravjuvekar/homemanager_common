@@ -219,6 +219,14 @@ button.urgent {
     color: ${notice-fg-color};
 }
 
+#keyboard-state > label:first-child {
+    padding-left: 10px;
+}
+
+#keyboard-state > label:last-child {
+    padding-right: 10px;
+}
+
 label#bluetooth.module {
     padding: 0 10px;
 }
@@ -313,15 +321,18 @@ label#bluetooth.module {
                   capslock = true;
                   scrolllock = true;
                   format =
+                    let
+                      pango_space_hack = "<span font-family=\"Roboto\">" + (mkunicode "2006") + "{icon}</span>";
+                    in
                     {
-                      numlock = "N {icon}";
-                      capslock = "C {icon}";
-                      scrolllock = "S {icon}";
+                      numlock = "N" + pango_space_hack;
+                      capslock = "C" + pango_space_hack;
+                      scrolllock = "S" + pango_space_hack;
                     };
                   format-icons =
                     {
                       locked = mkunicode "f023"; # lock
-                      unlocked = " ";
+                      unlocked = mkunicode "2007"; # figure-space
                     };
                 };
 
