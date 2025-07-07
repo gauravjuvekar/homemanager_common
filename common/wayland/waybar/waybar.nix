@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   xdg.configFile."waybar/style.css".text =
     let
@@ -331,9 +331,23 @@ button.urgent {
                 {
                   on-click = "activate";
                   on-click-middle = "close";
-
                 };
 
+              bluetooth =
+                {
+                  on-click = "${pkgs.blueberry}/bin/blueberry";
+                  on-click-right = "${pkgs.blueman}/bin/blueman-manager";
+                  on-click-middle = pkgs.writeShellScript "bluetooth-toggle"
+                    (
+                      let
+                        bluetoothctl-bin = "${pkgs.bluez}/bin/bluetoothctl";
+                      in
+                      ''
+                      ${bluetoothctl-bin} power $(${bluetoothctl-bin} show | grep -q "Powered: yes" && echo off || echo on)
+
+                      ''
+                    );
+                };
 
               idle_inhibitor =
                 {
