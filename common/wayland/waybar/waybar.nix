@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  mkunicode = s: builtins.fromJSON ("\"\\u" + s + "\"");
+in
 {
   xdg.configFile."waybar/style.css".text =
     let
@@ -18,7 +21,7 @@
     ''
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, sans-serif;
+    font-family: Droid Sans Mono Dotted, monospace;
     font-size: 14px;
 }
 
@@ -216,6 +219,10 @@ button.urgent {
     color: ${notice-fg-color};
 }
 
+label#bluetooth.module {
+    padding: 0 10px;
+}
+
 #bluetooth.on {
     background-color: ${inactive-bg-color};
     color: ${inactive-fg-color};
@@ -313,8 +320,8 @@ button.urgent {
                     };
                   format-icons =
                     {
-                      locked = builtins.fromJSON '' "\uf023" ''; # lock
-                      unlocked = "";
+                      locked = mkunicode "f023"; # lock
+                      unlocked = " ";
                     };
                 };
 
@@ -331,13 +338,13 @@ button.urgent {
 
               bluetooth =
                 {
-                  format-connected = builtins.fromJSON '' "\uf294 {num_connections} con" ''; # bluetooth-symbol
-                  format-disabled = builtins.fromJSON '' "\uf294 rfkill" ''; # bluetooth-symbol
-                  format-off = builtins.fromJSON '' "\uf294 off" ''; # bluetooth-symbol
-                  tooltip-format = "{controller_alias}\t{controller_address}";
-                  tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
-                  tooltip-format-enumerate-connected = "{device_address}\t{device_alias}";
-                  tooltip-format-enumerate-connected-battery = builtins.fromJSON '' "{device_address}\t\uf0e7 {device_battery_percentage}%\t{device_alias}" ''; # bolt
+                  format-connected = (mkunicode "f294") + " {num_connections} con"; # bluetooth-symbol
+                  format-disabled = (mkunicode "f294") + " rfkill"; # bluetooth-symbol
+                  format-off = (mkunicode "f294") + " off"; # bluetooth-symbol
+                  tooltip-format = "{controller_alias}  {controller_address}";
+                  tooltip-format-connected = "{controller_alias}  {controller_address}\n\n{device_enumerate}";
+                  tooltip-format-enumerate-connected = "{device_address}  {device_alias}";
+                  tooltip-format-enumerate-connected-battery = "{device_address} " + (mkunicode "f0e7") + " {device_battery_percentage:3}%  {device_alias}"; # bolt
                   on-click = "${pkgs.blueberry}/bin/blueberry";
                   on-click-right = "${pkgs.blueman}/bin/blueman-manager";
                   on-click-middle = pkgs.writeShellScript "bluetooth-toggle"
@@ -357,9 +364,8 @@ button.urgent {
                   format = "{icon}";
                   format-icons =
                     {
-                      activated = builtins.fromJSON '' "\uf0f4" ''; # icon-coffee
-                      deactivated = builtins.fromJSON '' "\uf186" ''; # icon-moon
-
+                      activated = mkunicode "f0f4"; # icon-coffee
+                      deactivated = mkunicode "f186"; # icon-moon
                     };
                 };
 
@@ -367,9 +373,8 @@ button.urgent {
                 {
                   on-click = "${pkgs.cinnamon-common}/bin/cinnamon-settings sound";
                   on-click-middle = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-                  format = "{icon}    {volume}%";
-                  format-muted = builtins.fromJSON '' "\uf026\u200a\uf00d {volume}%" ''; # volume-off hair-space xmark
-                  format-icons = [(builtins.fromJSON '' "\uf028" '')]; # volume-high
+                  format = (mkunicode "f028") + " {volume:3}%"; # volume-high
+                  format-muted = (mkunicode "f026") + (mkunicode "f00d") + "{volume:3}%"; # volume-off xmark
                 };
 
               clock =
