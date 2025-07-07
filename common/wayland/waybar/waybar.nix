@@ -1,5 +1,257 @@
 { ... }:
 {
+  xdg.configFile."waybar/style.css".text =
+    let
+      notice-bg-color = "#ecf0f1";
+      notice-fg-color = "#333333";
+      interactive-bg-color = "#333333";
+      interactive-fg-color = "#ffffff";
+      urgent-bg-color = "#eb4d4b";
+      urgent-fg-color = "#000000";
+      bluetooth-blue-bg-color = "#2980b9";
+      bluetooth-blue-fg-color = "#000000";
+      active-bg-color = "#1ca000";
+      active-fg-color = "#000000";
+    in
+    ''
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, sans-serif;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-bottom: 1px solid rgba(100, 100, 100, 1);
+    color: #ffffff;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+label {
+    padding: 0 5px;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+button {
+    padding: 5px;
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 3px #ffffff;
+}
+
+button.focused {
+    background-color: inherit;
+    box-shadow: inset 0px -3px #ffffff;
+}
+
+button.urgent {
+    background-color: ${urgent-bg-color};
+    color: ${urgent-fg-color};
+}
+
+/* Weird spacing without this */
+#taskbar label {
+    padding-left: 1px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background-color: ${interactive-bg-color};
+    color: ${interactive-fg-color};
+}
+
+#battery {
+    background-color: ${notice-bg-color};
+    color: ${notice-fg-color};
+}
+
+#battery.charging, #battery.plugged {
+    background-color: #26A65B;
+    color: ${notice-fg-color};
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: ${urgent-bg-color};
+    color: ${urgent-fg-color};
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#network {
+    background-color: #2980b9;
+}
+
+#network.disconnected {
+    background-color: ${urgent-bg-color};
+    color: ${urgent-fg-color};
+}
+
+#pulseaudio:hover {
+    background-color: #a37800;
+}
+
+#pulseaudio {
+    background-color: #f1c40f;
+    color: #000000;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #000000;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#tray {
+    background-color: ${interactive-bg-color};
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: ${urgent-bg-color};
+}
+
+#idle_inhibitor {
+    background-color: ${interactive-bg-color};
+}
+
+#idle_inhibitor.activated {
+    background-color: ${notice-bg-color};
+    color: ${notice-fg-color};
+}
+
+#keyboard-state {
+    color: #ffffff;
+    min-width: 16px;
+}
+
+#keyboard-state > label.locked {
+    background-color: ${notice-bg-color};
+    color: ${notice-fg-color};
+}
+
+#bluetooth {
+    padding: 0 5px;
+}
+
+#bluetooth.discoverable {
+    background-color: ${bluetooth-blue-bg-color};
+    color: ${bluetooth-blue-fg-color};
+}
+
+#bluetooth.discovering {
+    background: ${active-bg-color};
+    color: ${active-fg-color};
+}
+
+#bluetooth.off,
+#bluetooth.disabled,
+#bluetooth.no-controller {
+    background-color: ${urgent-bg-color};
+    color: ${urgent-fg-color};
+}
+
+#systemd-failed-units.degraded {
+    background-color: ${urgent-bg-color};
+    color: ${urgent-fg-color};
+}
+
+
+    '';
   programs.waybar =
     {
       enable = true;
@@ -126,6 +378,5 @@
                 };
             };
         };
-      style = ./waybar.css;
     };
 }
