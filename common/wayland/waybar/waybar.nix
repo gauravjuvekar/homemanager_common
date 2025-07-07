@@ -324,6 +324,11 @@ button.urgent {
                   on-click-middle = "close";
                 };
 
+              tray =
+                {
+                  spacing = 10;
+                };
+
               bluetooth =
                 {
                   format-connected = builtins.fromJSON '' "\uf294 {num_connections} con" ''; # bluetooth-symbol
