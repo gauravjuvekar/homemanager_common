@@ -216,8 +216,9 @@ button.urgent {
     color: ${notice-fg-color};
 }
 
-#bluetooth {
-    padding: 0 5px;
+#bluetooth.on {
+    background-color: ${inactive-bg-color};
+    color: ${inactive-fg-color};
 }
 
 #bluetooth.discoverable {
@@ -226,7 +227,7 @@ button.urgent {
 }
 
 #bluetooth.discovering {
-    background: ${active-bg-color};
+    background-color: ${active-bg-color};
     color: ${active-fg-color};
 }
 
@@ -325,6 +326,13 @@ button.urgent {
 
               bluetooth =
                 {
+                  format-connected = builtins.fromJSON '' "\uf294 {num_connections} con" ''; # bluetooth-symbol
+                  format-disabled = builtins.fromJSON '' "\uf294 rfkill" ''; # bluetooth-symbol
+                  format-off = builtins.fromJSON '' "\uf294 off" ''; # bluetooth-symbol
+                  tooltip-format = "{controller_alias}\t{controller_address}";
+                  tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+                  tooltip-format-enumerate-connected = "{device_address}\t{device_alias}";
+                  tooltip-format-enumerate-connected-battery = builtins.fromJSON '' "{device_address}\t\uf0e7 {device_battery_percentage}%\t{device_alias}" ''; # bolt
                   on-click = "${pkgs.blueberry}/bin/blueberry";
                   on-click-right = "${pkgs.blueman}/bin/blueman-manager";
                   on-click-middle = pkgs.writeShellScript "bluetooth-toggle"
