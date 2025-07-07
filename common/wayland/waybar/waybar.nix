@@ -215,7 +215,10 @@ button.urgent {
     min-width: 16px;
 }
 
-#keyboard-state > label.locked {
+/* Only highlight the unexpected state */
+#keyboard-state > label.numlock:not(.locked),
+#keyboard-state > label.capslock.locked,
+#keyboard-state > label.scrolllock.locked {
     background-color: ${notice-bg-color};
     color: ${notice-fg-color};
 }
