@@ -3,6 +3,7 @@ let
   mkunicode = s: builtins.fromJSON ("\"\\u" + s + "\"");
 in
 {
+  home.packages = [ pkgs.font-awesome ]; # Required for all the icons
   xdg.configFile."waybar/style.css".text =
     let
       notice-bg-color = "#ecf0f1";
