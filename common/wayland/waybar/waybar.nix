@@ -12,6 +12,8 @@
       bluetooth-blue-fg-color = "#000000";
       active-bg-color = "#1ca000";
       active-fg-color = "#000000";
+      inactive-bg-color = "#90b1b1";
+      inactive-fg-color = "#000000";
     in
     ''
 * {
@@ -157,7 +159,8 @@ button.urgent {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: ${inactive-bg-color};
+    color: ${inactive-fg-color};
 }
 
 #network {
@@ -169,27 +172,16 @@ button.urgent {
     color: ${urgent-fg-color};
 }
 
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
+#wireplumber,
 #pulseaudio {
     background-color: #f1c40f;
     color: #000000;
 }
 
+#wireplumber.muted,
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #000000;
-}
-
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
+    background-color: ${inactive-bg-color};
+    color: ${inactive-fg-color};
 }
 
 #tray {
@@ -249,8 +241,6 @@ button.urgent {
     background-color: ${urgent-bg-color};
     color: ${urgent-fg-color};
 }
-
-
     '';
   programs.waybar =
     {
@@ -280,7 +270,7 @@ button.urgent {
                   "keyboard-state"
                   "hyprland/submap"
                   "bluetooth"
-                  "pulseaudio"
+                  "wireplumber"
                   "clock"
                   "idle_inhibitor"
                   "systemd-failed-units"
@@ -358,6 +348,15 @@ button.urgent {
                       deactivated = builtins.fromJSON '' "\uf186" ''; # icon-moon
 
                     };
+                };
+
+              wireplumber =
+                {
+                  on-click = "${pkgs.cinnamon-common}/bin/cinnamon-settings sound";
+                  on-click-middle = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+                  format = "{icon}    {volume}%";
+                  format-muted = builtins.fromJSON '' "\uf026\u200a\uf00d {volume}%" ''; # volume-off hair-space xmark
+                  format-icons = [(builtins.fromJSON '' "\uf028" '')]; # volume-high
                 };
 
               clock =
