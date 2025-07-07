@@ -24,6 +24,7 @@
                 ];
               modules-right =
                 [
+                  "tray"
                   "keyboard-state"
                   "hyprland/submap"
                   "bluetooth"
@@ -61,6 +62,17 @@
                   numlock = true;
                   capslock = true;
                   scrolllock = true;
+                  format =
+                    {
+                      numlock = "N {icon}";
+                      capslock = "C {icon}";
+                      scrolllock = "S {icon}";
+                    };
+                  format-icons =
+                    {
+                      locked = builtins.fromJSON '' "\uf023" ''; # lock
+                      unlocked = "";
+                    };
                 };
 
               "wlr/taskbar" =

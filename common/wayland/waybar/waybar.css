@@ -1,42 +1,31 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: FontAwesome, Roboto, sans-serif;
+    font-size: 14px;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
+    border-bottom: 1px solid rgba(100, 100, 100, 1);
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
+label {
+    padding: 0 5px;
 }
 
-window#waybar.chromium {
+label:focus {
     background-color: #000000;
-    border: none;
 }
 
 button {
+    padding: 5px;
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
+    box-shadow: inset 0 3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
@@ -44,37 +33,22 @@ button {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 3px #ffffff;
 }
 
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+button.focused {
+    background-color: inherit;
+    box-shadow: inset 0px -3px #ffffff;
 }
 
-#workspaces button.urgent {
+button.urgent {
     background-color: #eb4d4b;
 }
 
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+/* Weird spacing without this */
+#taskbar label {
+    padding-left: 1px;
 }
 
 #clock,
@@ -114,16 +88,16 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: #333333;
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: #ecf0f1;
     color: #000000;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    color: #ecf0f1;
     background-color: #26A65B;
 }
 
@@ -164,23 +138,6 @@ button:hover {
     color: #000000;
 }
 
-label:focus {
-    background-color: #000000;
-}
-
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
 #backlight {
     background-color: #90b1b1;
 }
@@ -193,6 +150,10 @@ label:focus {
     background-color: #f53c3c;
 }
 
+#pulseaudio:hover {
+    background-color: #a37800;
+}
+
 #pulseaudio {
     background-color: #f1c40f;
     color: #000000;
@@ -200,7 +161,7 @@ label:focus {
 
 #pulseaudio.muted {
     background-color: #90b1b1;
-    color: #2a5c45;
+    color: #000000;
 }
 
 #wireplumber {
@@ -212,30 +173,8 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
 #tray {
-    background-color: #2980b9;
+    background-color: #333333;
 }
 
 #tray > .passive {
@@ -248,80 +187,47 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: #333333;
 }
 
 #idle_inhibitor.activated {
     background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
+    color: #333333;
 }
 
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
+    color: #ffffff;
     min-width: 16px;
 }
 
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
 #keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
+    background: #ecf0f1;
+    color: #000000;
 }
 
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
+#bluetooth {
     padding: 0 5px;
-    color: white;
 }
 
-#privacy-item.screenshare {
-    background-color: #cf5700;
+#bluetooth.discoverable {
+    background: #2980b9;
+    color: #000000;
 }
 
-#privacy-item.audio-in {
-    background-color: #1ca000;
+#bluetooth.discovering {
+    background: #1ca000;
+    color: #000000;
 }
 
-#privacy-item.audio-out {
-    background-color: #0069d4;
+#bluetooth.off,
+#bluetooth.disabled,
+#bluetooth.no-controller {
+    background: #eb4d4b;
+    color: #000000;
 }
+
+#systemd-failed-units.degraded {
+    background: #eb4d4b;
+    color: #000000;
+}
+
