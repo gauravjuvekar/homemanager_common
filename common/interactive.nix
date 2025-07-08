@@ -6,6 +6,7 @@
       ./gpg/gpg.nix
       ./keyboards/keyboards_interactive.nix
       ./parallel/parallel.nix
+      ./tmux/screen.nix
       ./tmux/tmux.nix
     ];
   home.packages = with pkgs;
@@ -31,7 +32,6 @@
       psmisc
       rage
       rsync
-      screen
       sshfs
       sshpass
       step-cli

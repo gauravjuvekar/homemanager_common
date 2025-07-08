@@ -45,6 +45,7 @@ in
       jsonschema
       patchutils
       repgrep
+      socat
       sqlite
       xxd
       ydiff

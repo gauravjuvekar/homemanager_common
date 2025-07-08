@@ -12,6 +12,7 @@
       cargo-vet
       cargo-watch
       clippy
+      ra-multiplex
       rust-analyzer
       rustc
       rustfmt

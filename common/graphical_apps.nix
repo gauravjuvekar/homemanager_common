@@ -14,6 +14,7 @@
       obs-studio
       openshot-qt
       qalculate-gtk
+      remmina
       thunderbird
       vlc
     ];
