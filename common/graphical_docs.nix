@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs;
     [
-      xreader
+      mate.atril
       pdfarranger
     ];
 }

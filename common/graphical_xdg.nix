@@ -14,7 +14,7 @@
           "applicaiton/x-extension-xhtml" = "firefox.desktop";
           "applicaiton/xhtml+xml" = "firefox.desktop";
           "applicaiton/zip" = "org.gnome.FileRoller.desktop";
-          "application/pdf" = "xreader.desktop";
+          "application/pdf" = "atril.desktop";
           "application/yaml" = "neovide.desktop";
           "image/jpeg" = "xviewer.desktop";
           "image/png" = "xviewer.desktop";
