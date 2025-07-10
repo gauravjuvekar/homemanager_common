@@ -122,6 +122,7 @@
               "browser.urlbar.quicksuggest.nonsponsored" = false;
               "browser.urlbar.quicksuggest.scenario" = "offline";
               "browser.urlbar.quicksuggest.sponsored" = false;
+              "browser.urlbar.scotchBonnet.enableOverride" = false;
               "browser.urlbar.showSearchSuggestionsFirst" = false;
               "browser.urlbar.suggest.engines" = false;
               "browser.urlbar.suggest.pocket" = false;
