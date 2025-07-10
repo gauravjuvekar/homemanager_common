@@ -3,5 +3,6 @@
     [
       mate.atril
       pdfarranger
+      sioyek
     ];
 }
