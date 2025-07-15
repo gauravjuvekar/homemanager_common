@@ -66,9 +66,9 @@ input {
         natural-scroll
     }
 
-    warp-mouse-to-focus
+    warp-mouse-to-focus mode="center-xy"
 
-    focus-follows-mouse
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 layout {
