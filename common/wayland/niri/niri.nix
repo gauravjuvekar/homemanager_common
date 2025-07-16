@@ -147,6 +147,17 @@ binds {
     Mod+L     { focus-column-or-monitor-right; }
     Mod+Right { focus-column-or-monitor-right; }
 
+    Mod+U              { focus-workspace-down; }
+    Mod+Page_Down      { focus-workspace-down; }
+    Mod+I              { focus-workspace-up; }
+    Mod+Page_Up        { focus-workspace-up; }
+
+    Mod+Comma  { focus-monitor-left; }
+    Mod+Period { focus-monitor-right; }
+
+    Mod+Shift+Comma  { consume-window-into-column; }
+    Mod+Shift+Period { expel-window-from-column; }
+
     Mod+Shift+H     { move-column-left-or-to-monitor-left; }
     Mod+Shift+Left  { move-column-left-or-to-monitor-left; }
     Mod+Shift+J     { move-window-down-or-to-workspace-down; }
@@ -160,11 +171,11 @@ binds {
     Mod+Ctrl+Left  { consume-or-expel-window-left;  }
     Mod+Ctrl+L     { consume-or-expel-window-right; }
     Mod+Ctrl+Right { consume-or-expel-window-right; }
+    Mod+Ctrl+J     { focus-monitor-left;  }
+    Mod+Ctrl+Down  { focus-monitor-left;  }
+    Mod+Ctrl+K     { focus-monitor-right; }
+    Mod+Ctrl+Up    { focus-monitor-right; }
 
-    Mod+U              { focus-workspace-down; }
-    Mod+Page_Down      { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
-    Mod+Page_Up        { focus-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }
@@ -209,9 +220,6 @@ binds {
     Mod+Ctrl+7 { move-column-to-workspace 7; }
     Mod+Ctrl+8 { move-column-to-workspace 8; }
     Mod+Ctrl+9 { move-column-to-workspace 9; }
-
-    Mod+Comma  { consume-window-into-column; }
-    Mod+Period { expel-window-from-column; }
 
     Mod+D { switch-preset-column-width; }
     Mod+Shift+D { switch-preset-window-height; }
