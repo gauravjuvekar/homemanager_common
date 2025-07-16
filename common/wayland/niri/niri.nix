@@ -68,7 +68,7 @@ input {
 
     warp-mouse-to-focus mode="center-xy"
 
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="1%"
 }
 
 layout {
