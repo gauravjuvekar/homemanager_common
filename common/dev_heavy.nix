@@ -10,6 +10,10 @@
 
   home.packages = with pkgs;
     [
+      flamegraph
       gnumake
+      heaptrack
+      hotspot
+      hyperfine
     ];
 }
