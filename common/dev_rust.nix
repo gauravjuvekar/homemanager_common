@@ -6,6 +6,7 @@
       cargo-audit
       cargo-binutils
       cargo-depgraph
+      cargo-flamegraph
       cargo-lock
       cargo-play
       cargo-sort
