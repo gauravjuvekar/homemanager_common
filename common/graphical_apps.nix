@@ -12,7 +12,7 @@
       libreoffice
       mpv
       obs-studio
-      openshot-qt
+      # openshot-qt # qtwebengine-5.15.19 is insecure
       qalculate-gtk
       remmina
       thunderbird
