@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
   wayland_gui_allow_root = pkgs.writeShellScriptBin "wayland-gui-allow-root"
     ''
@@ -10,7 +10,7 @@ let
     '';
   wayland_screenshot = pkgs.writeShellScriptBin "wayland-screenshot"
     ''
-      ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)" - | ${pkgs.swappy}/bin/swappy -f -
+      ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)" - | ${config.programs.satty.package}/bin/satty -f -
     '';
 
   mySommelier = pkgs.sommelier.overrideDerivation (oldAttrs:
@@ -44,6 +44,32 @@ in
     ''
       export NIXOS_OZONE_WL=1
     '';
+
+  programs.satty =
+    {
+      enable = true;
+      settings =
+        {
+          general =
+            {
+              output-filename = "/home/${config.home.username}/Screenshot-%Y-%m-%d_%H%M%S.png";
+            };
+          color-palette =
+            {
+              palette =
+                [
+                  "#f0932b"
+                  "#eb4d4d"
+                  "#6ab04c"
+                  "#22a6b3"
+                  "#0000ff"
+                  "#ff00ff"
+                  "#ffff00"
+                  "#00ffff"
+                ];
+            };
+        };
+    };
 
   systemd.user.services =
     let
