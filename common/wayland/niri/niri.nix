@@ -243,6 +243,7 @@ binds {
 
     Mod+G { toggle-column-tabbed-display; }
 
+    Mod+P { spawn "wayland-screenshot"; }
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
