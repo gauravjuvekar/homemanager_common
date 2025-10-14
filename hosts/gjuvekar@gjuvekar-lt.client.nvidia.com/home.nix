@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   imports =
     [
@@ -6,7 +6,6 @@
       ../../common/dev_heavy.nix
       ../../common/fonts.nix
       ../../common/graphical.nix
-      ../../common/graphical_admin.nix
       ../../common/graphical_apps.nix
       ../../common/graphical_design_lite.nix
       ../../common/graphical_dev.nix
