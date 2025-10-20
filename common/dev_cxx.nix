@@ -6,7 +6,8 @@
       clang
       clang-tools
       compiledb
-      llvmPackages.bintools-unwrapped
+      elfutils
+      llvmPackages.bintools
       llvmPackages.libcxxStdenv
     ];
 }
