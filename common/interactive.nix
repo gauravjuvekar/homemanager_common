@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports =
     [
@@ -11,12 +11,12 @@
     ];
   home.packages = with pkgs;
     [
-      (hiPrio parallel) # Because moreutils overwrites it
+      (lib.hiPrio parallel) # Because moreutils overwrites it
       age
       atop
       bat
       dig
-      du-dust
+      dust
       fclones
       file
       htop

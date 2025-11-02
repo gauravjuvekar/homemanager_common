@@ -4,7 +4,7 @@
     [
       dfu-util
       keymapviz
-      qmk
+      # qmk # Stopped using QMK keyboards for now
       # via # suddenly shows as unfree
       wally-cli
     ];

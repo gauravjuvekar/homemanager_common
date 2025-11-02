@@ -5,7 +5,7 @@
       imagemagick
       pandoc
       pdftk
-      poppler_utils # pdftotext
+      poppler-utils # pdftotext
       qpdf
     ];
 }

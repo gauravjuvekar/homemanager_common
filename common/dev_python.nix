@@ -4,7 +4,7 @@
     [
       isort
       poetry
-      python3Full
+      python3
       uv
       yapf
     ];

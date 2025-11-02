@@ -1,12 +1,12 @@
 { inputs, pkgs, ... }:
 let
-  fsaction_pkg = inputs.fsaction.outputs.packages.${pkgs.system}.default;
+  fsaction_pkg = inputs.fsaction.outputs.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 {
   home.packages =
     [
       fsaction_pkg
-      pkgs.poppler_utils # pdftotext
+      pkgs.poppler-utils # pdftotext
     ];
 
   systemd.user.services =

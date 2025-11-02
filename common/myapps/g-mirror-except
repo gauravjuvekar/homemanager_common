@@ -13,7 +13,7 @@ local_refs=$(git for-each-ref --format='%(refname)' \
 
 delete_refs="$(comm -13 <(echo "$local_refs") <(echo "$remote_refs"))"
 
-if [ "x$delete_refs" != "x" ]
+if [ "$delete_refs" != "" ]
 then
   # shellcheck disable=SC2086
   git push --delete "$remote_name" $delete_refs
